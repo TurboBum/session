@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Медицинская карта пациента</title>
+</head>
+<body>
+    <h1>Медицинская карта пациента</h1>
+
+    <form action="/medical_card_proverka" method="post">
+        <label for="fk_medical_cart">1.1 ID Мед. карты:</label><br>
+        <input type="text" id="fk_medical_cart" name="fk_medical_cart"><br><br>
+
+        <label for="code_for_hospitalization">1.2 Код госпитализации:</label><br>
+        <input type="text" id="code_for_hospitalization" name="code_for_hospitalization"><br><br>
+
+        <label for="fk_doctor">1.3 ID доктора:</label><br>
+        <input type="text" id="fk_doctor" name="fk_doctor"><br><br>
+
+        <label for="anamnesis">1. Сбор анамнеза:</label><br>
+        <textarea id="anamnesis" name="anamnesis" rows="4" cols="50"></textarea><br><br>
+    
+        <label for="symptoms">2. Описание симптоматики:</label><br>
+        <textarea id="symptoms" name="symptoms" rows="4" cols="50"></textarea><br><br>
+    
+        <label for="diagnosis">3. Указание диагноза:</label><br>
+        <input type="text" id="diagnosis" name="diagnosis"><br><br>
+    
+        <label for="recommendations">4. Рекомендации по лечению:</label><br>
+        <textarea id="recommendations" name="recommendations" rows="4" cols="50"></textarea><br><br>
+    
+        <label for="prescription">5. Формирование рецепта (до 10 препаратов):</label><br>
+        <div id="prescription-container">
+            <input type="text" id="medicine-1" name="medicine" placeholder="Название препарата">
+            <input type="text" id="dosage-1" name="dosage" placeholder="Дозировка">
+            <input type="text" id="format-1" name="format" placeholder="Формат приема">
+            <button type="button" onclick="addMedicine()">Добавить препарат</button>
+        </div>
+        <br>
+    
+        <label for="referral">6. Формирование направления на консультации к другим специалистам:</label><br>
+        <textarea id="referral" name="referral" rows="4" cols="50"></textarea><br><br>
+    
+        <label for="investigations">7. Инструментальные или лабораторные исследования:</label><br>
+        <textarea id="investigations" name="investigations" rows="4" cols="50"></textarea><br><br>
+    
+        <label for="procedures">8. Процедуры:</label><br>
+        <textarea id="procedures" name="procedures" rows="4" cols="50"></textarea><br><br>
+    
+        <input type="submit" value="Сохранить">
+    </form>
+
+    <script>
+        function addMedicine() {
+            // Проверка на максимальное количество препаратов
+            if (document.querySelectorAll('[id^="medicine"]').length >= 10) {
+                alert("Достигнуто максимальное количество препаратов!");
+                return;
+            }
+            
+            // Создание новых полей для препарата
+            var container = document.getElementById("prescription-container");
+            var index = document.querySelectorAll('[id^="medicine"]').length + 1;
+
+            var medicineInput = document.createElement("input");
+            medicineInput.type = "text";
+            medicineInput.id = "medicine-" + index;
+            medicineInput.name = "medicine";
+            medicineInput.placeholder = "Название препарата";
+
+            var dosageInput = document.createElement("input");
+            dosageInput.type = "text";
+            dosageInput.id = "dosage-" + index;
+            dosageInput.name = "dosage";
+            dosageInput.placeholder = "Дозировка";
+
+            var formatInput = document.createElement("input");
+            formatInput.type = "text";
+            formatInput.id = "format-" + index;
+            formatInput.name = "format";
+            formatInput.placeholder = "Формат приема";
+
+            var formatBR = document.createElement("br");
+
+            container.appendChild(formatBR);
+            container.appendChild(formatBR);
+            container.appendChild(medicineInput);
+            container.appendChild(dosageInput);
+            container.appendChild(formatInput);
+        }
+    </script>
+</body>
+</html>

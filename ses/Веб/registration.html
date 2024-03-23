@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>qqqq</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <form method="post" action="proverkaREG">
+        <h3>Информация о пациенте:</h3>
+        <label for="full_name">ФИО:</label>
+        <input type="text" id="full_name" name="full_name" required>
+        <br>
+        
+        <label for="passport">Паспортные данные:</label>
+        <input type="text" id="passport" name="passport" required>
+        <br>
+
+        <label for="Place_of_residence">Место проживания:</label>
+        <input type="text" id="Place_of_residence" name="Place_of_residence" required>
+        <br>
+
+        <label for="tel">Телефон:</label>
+        <input type="tel" id="tel" name="tel" required>
+        <br>
+
+        <label for="mail">Email:</label>
+        <input type="email" id="mail" name="mail" required>
+        <br>
+        
+        <label for="birthday">День рождения:</label>
+        <input type="date" id="birthday" name="birthday" required>
+        <br>
+
+        <label for="workplace">Место работы:</label>
+        <input type="text" id="workplace" name="workplace">
+        <br>
+        
+        <h3>Ваш пол:</h3>
+        <select name="gender" id="gender">
+            <option value=1>Мужчина</option>
+            <option value=0>Женьщина</option>
+        </select>
+        <br>
+        <h3>Страховой полис:</h3>
+        <label for="policy_number">Номер полиса:</label>
+        <input type="text" id="policy_number" name="policy_number" required>
+        <br>
+        
+        <label for="expiry_date">Срок действия:</label>
+        <input type="date" id="expiry_date" name="expiry_date" required>
+        <br>
+        
+        <h3>Страховая компания:</h3>
+        <label for="insurance_company">Наименование компании:</label>
+        <input type="text" id="insurance_company" name="insurance_company" required>
+        <br>
+        
+        <button type="submit">Отправить</button>
+      </form>
+</body>
+</html>

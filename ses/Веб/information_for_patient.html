@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информация о пациенте</title>
+</head>
+<body>
+    <label>ID:</label>
+    <p>{{id_patient}}</p>
+    <br>
+    <br>
+    <label>ФИО:</label>
+    <p>{{familija}} {{Imja}} {{otchestfo}}</p>
+    <br>
+    <br>
+    <label>Паспортные данные:</label>
+    <p>Серия-{{serija_pasport}} Номер-{{nomer_passport}}</p>
+    <br>
+    <br>
+    <label>день рождения:</label>
+    <p>{{day_roj}}</p>
+    <br>
+    <br>
+    <label>пол:</label>
+    {% if pol %}
+    <p>муж</p>
+    {% else %}
+    <p>жен</p>
+    {% endif %}
+    <br>
+    <br>
+    <label>ID медицинской карты:</label>
+    <p>{{id_cart}}</p>
+    <br>
+    <br>
+    <label>страховой полис:</label>
+    <p>{{polis}}</p>
+    <br>
+    <br>
+    <label>адресс:</label>
+    <p>{{addres}}</p>
+
+</body>
+</html>
